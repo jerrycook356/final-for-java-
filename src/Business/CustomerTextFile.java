@@ -45,8 +45,7 @@ public class CustomerTextFile  extends Exception implements CustomerDAO{
             {
                 //fill arraylist
                 String line = in.readLine();
-                System.out.println(line);
-                                    
+                
                 while(line != null)
                 {
                     String[] parts = line.split(FIELD_SEP);

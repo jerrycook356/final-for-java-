@@ -7,7 +7,8 @@ package Business;
 
 import javax.swing.JOptionPane;
 import javax.swing.text.JTextComponent;
-
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 /**
  *
  * @author jerry
@@ -24,13 +25,30 @@ public class Validator {
        }
        return true;
    }
-  // public boolean isEmail(JTextComponent c, String FieldName)
+   public boolean isEmail(JTextComponent c, String FieldName)
    {
-      // if(c.getText()
+       Pattern pattern;
+       Matcher matcher;
+       
+        String EMAIL_PATTERN = "^[A-Za-z0-9-\\+]+(.\\[_A-Za-z0-9-]+)*@"+
+                "[A-Za-z0-9-]+(\\.[.A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        pattern = Pattern.compile(EMAIL_PATTERN);
+        matcher = pattern.matcher(c.getText());
+        if(matcher.matches())
+            return true;
+        else
+            showEmailMessage(c,"Invalid Email Address");
+        return false;
+      
    }
    private void showMessage(JTextComponent c, String message)
    {
        JOptionPane.showMessageDialog(c,message,"Invalid Entry",
                JOptionPane.ERROR_MESSAGE);
+   }
+   private void showEmailMessage(JTextComponent c, String message)
+   {
+       JOptionPane.showMessageDialog(c,message + " \n "
+               + "please use email format xxxx@xxx.xxx");
    }
 }

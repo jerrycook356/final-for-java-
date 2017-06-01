@@ -9,7 +9,7 @@ package Business;
  *
  * @author jerry
  */
-public class Customer {
+public class Customer implements Comparable<Customer>{
     
     String email;
     String firstName;
@@ -33,6 +33,12 @@ public class Customer {
     public String getLastName()
     {
         return lastName;
+    }
+    
+     
+    public int compareTo(Customer c)
+    {
+       return this.getEmail().compareTo(c.getEmail());       
     }
    
     
