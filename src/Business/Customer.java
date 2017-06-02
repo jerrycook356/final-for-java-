@@ -38,7 +38,7 @@ public class Customer implements Comparable<Customer>{
      
     public int compareTo(Customer c)
     {
-       return this.getEmail().compareTo(c.getEmail());       
+       return this.getEmail().compareToIgnoreCase(c.getEmail());       
     }
    
     

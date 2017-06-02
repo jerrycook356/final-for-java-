@@ -120,4 +120,14 @@ public class CustomerTextFile  extends Exception implements CustomerDAO{
        customers.remove(c);
        return this.saveCustomer();
     }
+    
+    @Override
+    public void updateArrayList(ArrayList<Customer> newList)
+    {
+        
+        customers.clear();
+        for(Customer c: newList)
+            addCustomer(c);
+        
+    }
 }

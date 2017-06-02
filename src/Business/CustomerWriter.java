@@ -9,8 +9,11 @@ package Business;
  *
  * @author jerry
  */
+import java.util.ArrayList;
+
 public interface CustomerWriter {
     boolean addCustomer(Customer c);
     boolean updateCustomer(Customer c);
     boolean deleteCustomer(Customer c);
+    void updateArrayList(ArrayList<Customer> c);
 }
