@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  *
  * @author jerry
  */
-public class CustomerTextFile  extends Exception implements CustomerDAO{
+public class CustomerTextFile  extends Exception implements CustomerDAO {
     private ArrayList<Customer> customers = null;
     private Path customerPath = null;
     private File customerFile = null;
@@ -35,8 +35,7 @@ public class CustomerTextFile  extends Exception implements CustomerDAO{
     public ArrayList<Customer> getCustomers()
     {
         
-       //if(customers != null)
-           // return customers;
+       
         customers = new ArrayList<>();
         if(Files.exists(customerPath))
         {
@@ -62,7 +61,7 @@ public class CustomerTextFile  extends Exception implements CustomerDAO{
             }
             catch(IOException e)
             {
-                System.err.println(e);
+                System.err.println(e);              
             }
             
         }

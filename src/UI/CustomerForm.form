@@ -35,8 +35,8 @@
                       <Component id="UpdateButton" min="-2" pref="152" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       <Component id="DeleteButton" min="-2" pref="152" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                      <Component id="HelpButton" min="-2" pref="152" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      <Component id="HelpButton" min="-2" pref="132" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="ExitButton" min="-2" pref="152" max="-2" attributes="0"/>
                   </Group>
@@ -146,7 +146,7 @@
                                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                       <Component id="LastNameTextField" min="-2" pref="31" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="71" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="OkButton" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                           <Component id="CancelButton" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
@@ -169,8 +169,8 @@
                           <Component id="ListButton" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
                           <Component id="AddButton" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
                           <Component id="DeleteButton" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
-                          <Component id="HelpButton" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
                           <Component id="ExitButton" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
+                          <Component id="HelpButton" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                   </Group>
@@ -224,16 +224,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteButtonActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JToggleButton" name="HelpButton">
-      <Properties>
-        <Property name="mnemonic" type="int" value="104"/>
-        <Property name="text" type="java.lang.String" value="Help"/>
-        <Property name="toolTipText" type="java.lang.String" value="Command help"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HelpButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ExitButton">
@@ -378,6 +368,14 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Sort by email address:"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="HelpButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Help"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HelpButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

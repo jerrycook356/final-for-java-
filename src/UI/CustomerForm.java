@@ -54,7 +54,6 @@ public class CustomerForm extends javax.swing.JFrame {
         ListButton = new javax.swing.JButton();
         AddButton = new javax.swing.JButton();
         DeleteButton = new javax.swing.JButton();
-        HelpButton = new javax.swing.JToggleButton();
         ExitButton = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -74,6 +73,7 @@ public class CustomerForm extends javax.swing.JFrame {
         AscendingRadioButton = new javax.swing.JRadioButton();
         DescendingRadioButton = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
+        HelpButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,15 +110,6 @@ public class CustomerForm extends javax.swing.JFrame {
         DeleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DeleteButtonActionPerformed(evt);
-            }
-        });
-
-        HelpButton.setMnemonic('h');
-        HelpButton.setText("Help");
-        HelpButton.setToolTipText("Command help");
-        HelpButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HelpButtonActionPerformed(evt);
             }
         });
 
@@ -196,6 +187,13 @@ public class CustomerForm extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Sort by email address:");
 
+        HelpButton.setText("Help");
+        HelpButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HelpButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -212,8 +210,8 @@ public class CustomerForm extends javax.swing.JFrame {
                         .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43)
                         .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
-                        .addComponent(HelpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(78, 78, 78)
+                        .addComponent(HelpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -300,7 +298,7 @@ public class CustomerForm extends javax.swing.JFrame {
                                         .addComponent(jLabel3)
                                         .addGap(31, 31, 31)
                                         .addComponent(LastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(OkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(CancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -317,8 +315,8 @@ public class CustomerForm extends javax.swing.JFrame {
                             .addComponent(ListButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(HelpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(HelpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(58, 58, 58))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -412,19 +410,6 @@ public class CustomerForm extends javax.swing.JFrame {
        
         
     }//GEN-LAST:event_DeleteButtonActionPerformed
-
-    private void HelpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpButtonActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this,"List - press to refresh the list of customers"+
-                "currently saved \n"+"Add - press to enable edit fields to add a customer \n"+
-                "Update - Select customer in list then press update to update names information "+
-                "\n"
-                + "Delete - Select customer in list then press delete to remove customer information"+
-                "\nExit - exit the program\n"
-                +"Sort - will sort the display according to which radio button is selected");
-        
-        HelpButton.setEnabled(true);
-    }//GEN-LAST:event_HelpButtonActionPerformed
 
     private void ListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListButtonActionPerformed
         // TODO add your handling code here:
@@ -553,6 +538,20 @@ public class CustomerForm extends javax.swing.JFrame {
         setListModel();
         CustomerList.setModel(listModel);
     }//GEN-LAST:event_SortButtonActionPerformed
+
+    private void HelpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpButtonActionPerformed
+        // TODO add your handling code here:
+         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this,"List - press to refresh the list of customers"+
+                "currently saved \n"+"Add - press to enable edit fields to add a customer \n"+
+                "Update - Select customer in list then press update to update names information "+
+                "\n"
+                + "Delete - Select customer in list then press delete to remove customer information"+
+                "\nExit - exit the program\n"
+                +"Sort - will sort the display according to which radio button is selected");
+        
+       
+    }//GEN-LAST:event_HelpButtonActionPerformed
     
     public boolean isValidData()
     {
@@ -611,7 +610,7 @@ public class CustomerForm extends javax.swing.JFrame {
     private javax.swing.JTextField EmailTextField;
     private javax.swing.JButton ExitButton;
     private javax.swing.JTextField FirstNameTextField;
-    private javax.swing.JToggleButton HelpButton;
+    private javax.swing.JButton HelpButton;
     private javax.swing.JTextField LastNameTextField;
     private javax.swing.JButton ListButton;
     private javax.swing.JButton OkButton;
