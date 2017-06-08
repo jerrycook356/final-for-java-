@@ -30,32 +30,37 @@ public class Validator {
        Pattern pattern;
        Matcher matcher;
        
-        String EMAIL_PATTERN = "^[A-Za-z0-9-\\+]+(.\\[_A-Za-z0-9-]+)*@"+
+        final String EMAIL_PATTERN = "^[A-Za-z0-9-\\+]+(.\\[_A-Za-z0-9-]+)*@"+
                 "[A-Za-z0-9-]+(\\.[.A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
         pattern = Pattern.compile(EMAIL_PATTERN);
         matcher = pattern.matcher(c.getText());
         if(matcher.matches())
             return true;
         else
-            showEmailMessage(c,"Invalid Email Address");
+            showMessage(c,"Invalid Email Address \n"
+            +"should be xxxx@xxxx.com format");
+        c.requestFocusInWindow();
         return false;
       
    }
-   private boolean isValidNameLength(JTextComponent c,int size, String FieldName)
+   public boolean isValidNameLength(JTextComponent c,int size, String FieldName)
    {
        
-       if(c.toString().length() > size)
+       if(c.getText().length() > size)
        {
-           showNameSizeMessage(c,"Has to be 15 characters or less");
+           
+           showMessage(c,FieldName+" Has to be 15 characters or less");
+           c.requestFocusInWindow();
            return false;
        }
       return true;
    }
-   private boolean isValidEmailLength(JTextComponent c, int size, String FieldName)
+   public boolean isValidEmailLength(JTextComponent c, int size, String FieldName)
    {
-       if(c.toString().length() > size)
+       if(c.getText().length() > size)
        {
-           showEmailSizeMessage(c, " Has to be 30 characters or less");
+           showMessage(c, FieldName +" Has to be 30 characters or less");
+           c.requestFocusInWindow();
            return false;
        }
        return true;
@@ -64,18 +69,5 @@ public class Validator {
    {
        JOptionPane.showMessageDialog(c,message,"Invalid Entry",
                JOptionPane.ERROR_MESSAGE);
-   }
-   private void showEmailMessage(JTextComponent c, String message)
-   {
-       JOptionPane.showMessageDialog(c,message + " \n "
-               + "please use email format xxxx@xxx.xxx");
-   }
-   private void showNameSizeMessage(JTextComponent c, String message)
-   {
-       JOptionPane.showMessageDialog(c,message);
-   }
-   private void showEmailSizeMessage(JTextComponent c, String message)
-   {
-       JOptionPane.showMessageDialog(c,message);
    }
 }

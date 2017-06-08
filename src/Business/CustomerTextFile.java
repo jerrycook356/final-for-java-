@@ -61,6 +61,7 @@ public class CustomerTextFile  extends Exception implements CustomerDAO {
             }
             catch(IOException e)
             {
+                
                 System.err.println(e);              
             }
             

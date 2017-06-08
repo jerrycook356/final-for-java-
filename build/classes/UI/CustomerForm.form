@@ -27,18 +27,17 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="ListButton" min="-2" pref="152" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Component id="AddButton" min="-2" pref="152" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
                       <Component id="UpdateButton" min="-2" pref="152" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
                       <Component id="DeleteButton" min="-2" pref="152" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
                       <Component id="HelpButton" min="-2" pref="132" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="ExitButton" min="-2" pref="152" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jSeparator3" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
@@ -166,7 +165,6 @@
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="UpdateButton" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
-                          <Component id="ListButton" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
                           <Component id="AddButton" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
                           <Component id="DeleteButton" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
                           <Component id="ExitButton" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
@@ -194,16 +192,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateButtonActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="ListButton">
-      <Properties>
-        <Property name="mnemonic" type="int" value="76"/>
-        <Property name="text" type="java.lang.String" value="List"/>
-        <Property name="toolTipText" type="java.lang.String" value="Display customers"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ListButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="AddButton">
@@ -346,6 +334,7 @@
       <Properties>
         <Property name="mnemonic" type="int" value="115"/>
         <Property name="text" type="java.lang.String" value="Sort:"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SortButtonActionPerformed"/>
@@ -354,11 +343,13 @@
     <Component class="javax.swing.JRadioButton" name="AscendingRadioButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ascending: "/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="DescendingRadioButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Descending: "/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">

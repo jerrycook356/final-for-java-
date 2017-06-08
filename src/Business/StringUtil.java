@@ -19,7 +19,7 @@ public class StringUtil {
             StringBuilder sb = new StringBuilder(s);
             while(sb.length() < length)
             {
-                sb.append(".");
+                sb.append(" ");
             }
             return sb.toString();
             

@@ -16,6 +16,7 @@ import Business.Validator;
 import java.util.*;
 
 
+
 /**
  *
  * @author jerry
@@ -51,7 +52,6 @@ public class CustomerForm extends javax.swing.JFrame {
 
         jSeparator1 = new javax.swing.JSeparator();
         UpdateButton = new javax.swing.JButton();
-        ListButton = new javax.swing.JButton();
         AddButton = new javax.swing.JButton();
         DeleteButton = new javax.swing.JButton();
         ExitButton = new javax.swing.JButton();
@@ -83,15 +83,6 @@ public class CustomerForm extends javax.swing.JFrame {
         UpdateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateButtonActionPerformed(evt);
-            }
-        });
-
-        ListButton.setMnemonic('L');
-        ListButton.setText("List");
-        ListButton.setToolTipText("Display customers");
-        ListButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ListButtonActionPerformed(evt);
             }
         });
 
@@ -174,6 +165,7 @@ public class CustomerForm extends javax.swing.JFrame {
 
         SortButton.setMnemonic('s');
         SortButton.setText("Sort:");
+        SortButton.setFocusable(false);
         SortButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SortButtonActionPerformed(evt);
@@ -181,8 +173,10 @@ public class CustomerForm extends javax.swing.JFrame {
         });
 
         AscendingRadioButton.setText("Ascending: ");
+        AscendingRadioButton.setFocusable(false);
 
         DescendingRadioButton.setText("Descending: ");
+        DescendingRadioButton.setFocusable(false);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Sort by email address:");
@@ -202,18 +196,17 @@ public class CustomerForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(ListButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
+                        .addGap(44, 44, 44)
                         .addComponent(AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
+                        .addGap(131, 131, 131)
                         .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
+                        .addGap(135, 135, 135)
                         .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(78, 78, 78)
+                        .addGap(134, 134, 134)
                         .addComponent(HelpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30))
                     .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -312,7 +305,6 @@ public class CustomerForm extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ListButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -334,14 +326,28 @@ public class CustomerForm extends javax.swing.JFrame {
    
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this,"Thank you for using, Goodbye");
-        System.exit(0);
+       // JOptionPane.showMessageDialog(this,"Thank you for using, Goodbye");
+       // System.exit(0);
+        int choice = JOptionPane.showConfirmDialog(this, "Do you really Want to Exit? "
+        ," ",JOptionPane.YES_NO_OPTION);
+                
+        switch (choice) {
+            case JOptionPane.YES_OPTION: {
+                System.exit(0);
+            }
+            case JOptionPane.NO_OPTION: {
+                break;
+            }
+        }
+           
+        
+        
     }//GEN-LAST:event_ExitButtonActionPerformed
 
     private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
         // TODO add your handling code here:
 
-        ListButton.setEnabled(false);
+        AddButton.setEnabled(false);
         UpdateButton.setEnabled(false);
         DeleteButton.setEnabled(false);
         HelpButton.setEnabled(false);
@@ -362,16 +368,15 @@ public class CustomerForm extends javax.swing.JFrame {
     private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
         // TODO add your handling code here:
         if (!CustomerList.isSelectionEmpty()) {
-            ListButton.setEnabled(false);
+           
             AddButton.setEnabled(false);
             DeleteButton.setEnabled(false);
             HelpButton.setEnabled(false);
             ExitButton.setEnabled(false);
             UpdateButton.setEnabled(false);
-
             OkButton.setEnabled(false);
-            CancelButton.setEnabled(true);
-            //EmailTextField.setEnabled(true);
+            
+            CancelButton.setEnabled(true);           
             FirstNameTextField.setEnabled(true);
             LastNameTextField.setEnabled(true);
             UpButton.setEnabled(true);
@@ -396,12 +401,27 @@ public class CustomerForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         ArrayList<Customer> deleteArray = cDAO.getCustomers();
         if (!CustomerList.isSelectionEmpty()) {
+            int choice = JOptionPane.showConfirmDialog
+                            (this,"Do you really Want to delete? ","",
+                                    JOptionPane.YES_NO_OPTION);
+            switch (choice)
+                    {
+            case JOptionPane.YES_OPTION:
+            {
             int i = CustomerList.getSelectedIndex();
             Customer c = deleteArray.get(i);
-            cDAO.deleteCustomer(deleteArray.get(i));
+            cDAO.deleteCustomer(c);
 
             setListModel();
             CustomerList.setModel(listModel);
+            break;
+            }
+            case JOptionPane.NO_OPTION:
+            {
+                break;
+            }
+            }
+        
         }
         else
         {
@@ -410,14 +430,6 @@ public class CustomerForm extends javax.swing.JFrame {
        
         
     }//GEN-LAST:event_DeleteButtonActionPerformed
-
-    private void ListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListButtonActionPerformed
-        // TODO add your handling code here:
-      // listModel.removeAllElements();
-      // CustomerList.setModel(listModel);
-         setListModel();
-         CustomerList.setModel(listModel);
-    }//GEN-LAST:event_ListButtonActionPerformed
     public void setListModel()
     {
        listModel.removeAllElements();
@@ -428,8 +440,9 @@ public class CustomerForm extends javax.swing.JFrame {
        
              for(Customer c : newArrayList)
              {
-                 String a = (c.getEmail()+"    "+c.getFirstName()+"    "+
-                 c.getLastName());
+                 String a = (Business.StringUtil.padWithSpaces(c.getEmail(),20)+
+                         Business.StringUtil.padWithSpaces(c.getFirstName(),20)+
+                Business.StringUtil.padWithSpaces(c.getLastName(),20));
                  listModel.addElement(a);
              }
              CustomerList.setModel(listModel);                
@@ -443,10 +456,10 @@ public class CustomerForm extends javax.swing.JFrame {
         EmailTextField.setEnabled(false);
         FirstNameTextField.setEnabled(false);
         LastNameTextField.setEnabled(false);
-       // OkButton.setEnabled(false);
         CancelButton.setEnabled(false);
+        OkButton.setEnabled(false);
         
-        ListButton.setEnabled(true);
+        
         AddButton.setEnabled(true);
         UpdateButton.setEnabled(true);
         DeleteButton.setEnabled(true);
@@ -459,19 +472,21 @@ public class CustomerForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         String email = EmailTextField.getText();
         String firstName = FirstNameTextField.getText();
-        String lastName = FirstNameTextField.getText();
+        String lastName = LastNameTextField.getText();
         if(isValidData())
         {
         Customer c = new Customer(email,firstName,lastName);
         cDAO.addCustomer(c);
         setListModel();
 
-        ListButton.setEnabled(true);
+        
+        
         AddButton.setEnabled(true);
         UpdateButton.setEnabled(true);
         DeleteButton.setEnabled(true);
         HelpButton.setEnabled(true);
         ExitButton.setEnabled(true);
+        
         OkButton.setEnabled(false);
         CancelButton.setEnabled(false);
         EmailTextField.setEnabled(false);
@@ -501,9 +516,9 @@ public class CustomerForm extends javax.swing.JFrame {
        UpdateButton.setEnabled(true);
        ExitButton.setEnabled(true);
        AddButton.setEnabled(true);
-       ListButton.setEnabled(true);
        DeleteButton.setEnabled(true);
        HelpButton.setEnabled(true);
+       
        UpButton.setEnabled(false);
        OkButton.setEnabled(false);
        CancelButton.setEnabled(false);
@@ -542,8 +557,8 @@ public class CustomerForm extends javax.swing.JFrame {
     private void HelpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpButtonActionPerformed
         // TODO add your handling code here:
          // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this,"List - press to refresh the list of customers"+
-                "currently saved \n"+"Add - press to enable edit fields to add a customer \n"+
+        JOptionPane.showMessageDialog(this,
+                "Add - press to enable edit fields to add a customer \n"+
                 "Update - Select customer in list then press update to update names information "+
                 "\n"
                 + "Delete - Select customer in list then press delete to remove customer information"+
@@ -559,7 +574,11 @@ public class CustomerForm extends javax.swing.JFrame {
                 val.isPresent(EmailTextField,"Email Address:")&&
                 val.isPresent(FirstNameTextField,"First Name:")&&
                 val.isPresent(LastNameTextField,"Last Name:")&&
-                val.isEmail(EmailTextField, "Email Address:");
+                val.isEmail(EmailTextField, "Email Address:")&&
+                val.isValidEmailLength(EmailTextField,
+                        30,"Email Address:")&&
+                val.isValidNameLength(FirstNameTextField,15,"First Name:")&&
+                val.isValidNameLength(LastNameTextField,15,"Last Name:");
     }
     /**
      * @param args the command line arguments
@@ -612,7 +631,6 @@ public class CustomerForm extends javax.swing.JFrame {
     private javax.swing.JTextField FirstNameTextField;
     private javax.swing.JButton HelpButton;
     private javax.swing.JTextField LastNameTextField;
-    private javax.swing.JButton ListButton;
     private javax.swing.JButton OkButton;
     private javax.swing.JButton SortButton;
     private javax.swing.JButton UpButton;
