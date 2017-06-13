@@ -78,6 +78,7 @@ public class CustomerForm extends javax.swing.JFrame {
         HelpButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         CustomerTable = new javax.swing.JTable();
+        AboutButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -221,6 +222,13 @@ public class CustomerForm extends javax.swing.JFrame {
             CustomerTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
+        AboutButton.setText("About");
+        AboutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AboutButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -272,19 +280,22 @@ public class CustomerForm extends javax.swing.JFrame {
                                     .addGap(7, 7, 7)
                                     .addComponent(UpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
-                                    .addComponent(CancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(44, 44, 44)
-                            .addComponent(AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(131, 131, 131)
-                            .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(135, 135, 135)
-                            .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(366, 366, 366)
-                            .addComponent(HelpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(83, 83, 83)
-                            .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(CancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(131, 131, 131)
+                .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(135, 135, 135)
+                .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(113, 113, 113)
+                .addComponent(HelpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77)
+                .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(AboutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,9 +341,12 @@ public class CustomerForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HelpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(HelpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(AboutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -372,6 +386,8 @@ public class CustomerForm extends javax.swing.JFrame {
         DeleteButton.setEnabled(false);
         HelpButton.setEnabled(false);
         ExitButton.setEnabled(false);
+        SortButton.setEnabled(false);
+        UpButton.setEnabled(false);
         
         
         OkButton.setEnabled(true);
@@ -396,6 +412,7 @@ public class CustomerForm extends javax.swing.JFrame {
             ExitButton.setEnabled(false);
             UpdateButton.setEnabled(false);
             OkButton.setEnabled(false);
+            SortButton.setEnabled(false);
             
             CancelButton.setEnabled(true);           
             FirstNameTextField.setEnabled(true);
@@ -480,6 +497,7 @@ public class CustomerForm extends javax.swing.JFrame {
         LastNameTextField.setEnabled(false);
         CancelButton.setEnabled(false);
         OkButton.setEnabled(false);
+        UpButton.setEnabled(false);
         
         
         AddButton.setEnabled(true);
@@ -487,6 +505,7 @@ public class CustomerForm extends javax.swing.JFrame {
         DeleteButton.setEnabled(true);
         HelpButton.setEnabled(true);
         ExitButton.setEnabled(true);
+        SortButton.setEnabled(true);
         
     }//GEN-LAST:event_CancelButtonActionPerformed
 
@@ -508,6 +527,7 @@ public class CustomerForm extends javax.swing.JFrame {
         DeleteButton.setEnabled(true);
         HelpButton.setEnabled(true);
         ExitButton.setEnabled(true);
+        SortButton.setEnabled(true);
         
         OkButton.setEnabled(false);
         CancelButton.setEnabled(false);
@@ -592,6 +612,12 @@ public class CustomerForm extends javax.swing.JFrame {
     private void AscendingRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AscendingRadioButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AscendingRadioButtonActionPerformed
+
+    private void AboutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutButtonActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this,"Program by:\n"+" Jerry Cook\n"
+            +"June 6, 2017");
+    }//GEN-LAST:event_AboutButtonActionPerformed
     
     public boolean isValidData()
     {
@@ -645,6 +671,7 @@ public class CustomerForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AboutButton;
     private javax.swing.JButton AddButton;
     private javax.swing.JRadioButton AscendingRadioButton;
     private javax.swing.JButton CancelButton;
