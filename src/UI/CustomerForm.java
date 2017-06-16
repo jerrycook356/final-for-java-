@@ -40,7 +40,7 @@ public class CustomerForm extends javax.swing.JFrame {
         cDAO = DAOFactory.getCustomerDAO();
         initComponents();   
         buttonGroup();
-        setListModel();
+        setTableModel();
        
          
     }
@@ -449,7 +449,7 @@ public class CustomerForm extends javax.swing.JFrame {
             Customer c = deleteArray.get(row);
             cDAO.deleteCustomer(c);
 
-            setListModel();
+            setTableModel();
             
             break;
             }
@@ -467,7 +467,7 @@ public class CustomerForm extends javax.swing.JFrame {
        
         
     }//GEN-LAST:event_DeleteButtonActionPerformed
-    public void setListModel()
+    public void setTableModel()
     {
        //listModel.removeAllElements();
        //CustomerList.setModel(listModel);
@@ -518,7 +518,7 @@ public class CustomerForm extends javax.swing.JFrame {
         {
         Customer c = new Customer(email,firstName,lastName);
         cDAO.addCustomer(c);
-        setListModel();
+        setTableModel();
 
         
         
@@ -552,7 +552,7 @@ public class CustomerForm extends javax.swing.JFrame {
       Customer c = new Customer(email,first,last);
       cDAO.updateCustomer(c);
        
-       setListModel();
+       setTableModel();
        
        UpdateButton.setEnabled(true);
        ExitButton.setEnabled(true);
@@ -591,7 +591,7 @@ public class CustomerForm extends javax.swing.JFrame {
             cDAO.updateArrayList(sortArrayList);
         }
         
-        setListModel();
+        setTableModel();
        
     }//GEN-LAST:event_SortButtonActionPerformed
 
